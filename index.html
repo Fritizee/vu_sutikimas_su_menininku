@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#78003F" />
+    <meta name="description" content="Idėjos pasimatymui su savo vidiniu menininku" />
+    <title>Vidinis menininkas</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Vidinis menininkas — į pradžią">
+          <span class="brand-mark" aria-hidden="true">V</span>
+          <span>Vidinis menininkas</span>
+        </a>
+        <button class="history-link" id="historyToggle" type="button" aria-expanded="false" aria-controls="historyPanel">
+          <span aria-hidden="true">◷</span> Istorija <span class="history-count" id="historyCount">0</span>
+        </button>
+      </header>
+
+      <section class="hero" id="top" aria-labelledby="pageTitle">
+        <p class="eyebrow">Mažas impulsas kūrybiškesnei dienai</p>
+        <h1 id="pageTitle">Idėjos pasimatymui<br /><em>su savo vidiniu menininku.</em></h1>
+        <p class="intro">Leiskite atsitiktinumui pasiūlyti mažą nuotykį, kuris pažadins smalsumą ir kūrybiškumą.</p>
+      </section>
+
+      <section class="challenge-card" aria-live="polite" aria-atomic="true">
+        <div class="card-topline">
+          <span class="card-label">TAVO IDĖJA</span>
+          <span class="spark" aria-hidden="true">✦</span>
+        </div>
+        <div class="challenge-content" id="challengeContent">
+          <p class="placeholder" id="challengeText">Spustelėk mygtuką ir leisk atsitiktinumui parinkti idėją.</p>
+        </div>
+        <div class="card-footer">
+          <button class="reveal-button" id="revealButton" type="button">
+            <span class="button-text">Atrasti idėją</span>
+            <span class="button-arrow" aria-hidden="true">→</span>
+          </button>
+          <p class="hint" id="statusText">Idėja bus išsaugota istorijoje</p>
+        </div>
+      </section>
+
+      <p class="note">Naujas idėjas galite pridėti faile <code>data/challenges.json</code>.</p>
+    </main>
+
+    <aside class="history-panel" id="historyPanel" aria-label="Idėjų istorija" aria-hidden="true">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Tavo kolekcija</p>
+          <h2>Idėjų istorija</h2>
+        </div>
+        <button class="icon-button" id="closeHistory" type="button" aria-label="Uždaryti istoriją">×</button>
+      </div>
+      <div class="history-list" id="historyList"></div>
+      <div class="panel-footer">
+        <button class="clear-button" id="clearHistory" type="button">Išvalyti istoriją</button>
+      </div>
+    </aside>
+    <div class="scrim" id="scrim" hidden></div>
+
+    <template id="historyEmpty">
+      <div class="empty-state"><span aria-hidden="true">✦</span><p>Čia atsiras atrastos idėjos.</p></div>
+    </template>
+    <script src="app.js"></script>
+  </body>
+</html>
