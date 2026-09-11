@@ -10,7 +10,7 @@ Projekto aplanke paleiskite bet kurį statinį interneto serverį. Pavyzdžiui, 
 python3 -m http.server 8000
 ```
 
-Arba naudoti [Github Pages|https://fritizee.github.io/vu_sutikimas_su_menininku]
+Arba naudoti [Github Pages][https://fritizee.github.io/vu_sutikimas_su_menininku]
 
 Tada atidarykite `http://localhost:8000`. Serveris reikalingas, nes naršyklės riboja JSON failų įkėlimą puslapį atidarant tiesiai iš failų sistemos.
 
